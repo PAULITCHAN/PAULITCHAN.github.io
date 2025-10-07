@@ -3,22 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Paul Christian M. Dimaculangan</title>
+  <title>Paul Christian M. Dimaculangan | Portfolio</title>
   <style>
     body {
+      margin: 0;
+      padding: 0;
       background: linear-gradient(135deg, #0a1a3a, #00111f);
-      color: white;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
-      font-family: 'Segoe UI', sans-serif;
-      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
+
+    h1 {
+      font-size: 3.5em;
+      margin: 10px 0;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin: 5px 0 30px;
+      color: #a9b4c2;
+    }
+
+    nav {
+      margin-bottom: 20px;
+    }
+
     nav a {
       color: #00aaff;
       text-decoration: none;
       margin: 0 15px;
+      font-size: 1.2em;
       font-weight: bold;
+      transition: color 0.3s ease;
     }
+
     nav a:hover {
+      color: #66d9ff;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 1em;
+      color: #ccc;
+    }
+
+    footer a {
+      color: #00aaff;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    footer a:hover {
       text-decoration: underline;
     }
   </style>
@@ -34,7 +77,10 @@
     <a href="contact.html">📧 Contact</a>
   </nav>
 
-  <h2>Welcome to my portfolio!</h2>
-  <p>Explore my projects, skills, and experiences as I grow in web development.</p>
+  <footer>
+    ✉️ <a href="mailto:paulchristiandimaculangan@gmail.com">Email</a> |
+    🌐 <a href="https://paulitchan.github.io" target="_blank">Portfolio</a> |
+    🐙 <a href="https://github.com/PAULITCHAN" target="_blank">GitHub</a>
+  </footer>
 </body>
 </html>
