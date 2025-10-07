@@ -1,166 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paul Christian M. Dimaculangan | Portfolio</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
       margin: 0;
-      font-family: "Poppins", Arial, sans-serif;
-      background: #0d1117;
-      color: #c9d1d9;
-    }
-    header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0a1a3a, #00111f);
+      color: #fff;
       text-align: center;
       height: 100vh;
-      background: linear-gradient(135deg, #1f6feb, #0d1117);
-      color: white;
-      animation: fadeIn 1.5s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-    header h1 {
-      font-size: 2.8rem;
+
+    h1 {
+      font-size: 2.8em;
       margin-bottom: 10px;
-      letter-spacing: 1px;
     }
-    header p {
-      font-size: 1.2rem;
-      color: #d1d5da;
+
+    p {
+      font-size: 1.2em;
+      color: #a9b4c2;
       margin-bottom: 30px;
     }
+
     nav a {
       color: #fff;
       text-decoration: none;
       margin: 0 15px;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #58a6ff;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-      animation: fadeInUp 1s ease;
-    }
-    h2 {
-      color: #58a6ff;
-      border-bottom: 2px solid #30363d;
-      padding-bottom: 5px;
-      margin-bottom: 20px;
-    }
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 15px;
-    }
-    .skill {
-      background: #161b22;
-      padding: 15px;
-      text-align: center;
-      border-radius: 10px;
-      transition: transform 0.3s;
-    }
-    .skill:hover {
-      transform: translateY(-5px);
-      background: #1f6feb;
-      color: white;
-    }
-    .projects li {
-      list-style: none;
-      background: #161b22;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 10px;
-      transition: background 0.3s;
-    }
-    .projects li:hover {
-      background: #1f6feb;
-    }
-    .projects a {
-      text-decoration: none;
-      color: #58a6ff;
       font-weight: bold;
+      transition: color 0.3s ease;
     }
-    .projects a:hover {
-      color: white;
+
+    nav a:hover {
+      color: #00aaff;
     }
+
     footer {
-      text-align: center;
-      padding: 20px;
-      background: #161b22;
-      color: #8b949e;
-      font-size: 0.9rem;
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #ccc;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+
+    footer a {
+      color: #00aaff;
+      text-decoration: none;
     }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+  <h1>👨‍💻 Paul Christian M. Dimaculangan</h1>
+  <p>💻 Web Developer | ⚙️ Tech Enthusiast | 🎨 Creative Thinker</p>
 
-  <header>
-    <h1>Paul Christian M. Dimaculangan</h1>
-    <p>Web Developer | Tech Enthusiast | Creative Thinker</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hello! I’m <strong>Paul Christian M. Dimaculangan</strong>, a passionate developer based in the Philippines. 
-      I enjoy designing and building functional, creative, and user-friendly websites and applications. 
-      My goal is to keep learning and contribute meaningful work in the field of technology and innovation.
-    </p>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-      <div class="skill">HTML</div>
-      <div class="skill">CSS</div>
-      <div class="skill">JavaScript</div>
-      <div class="skill">Python</div>
-      <div class="skill">Git / GitHub</div>
-      <div class="skill">React (Basic)</div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul class="projects">
-      <li><a href="https://github.com/PAULITCHAN/github_portfolio" target="_blank">GitHub Portfolio</a> — My first project showing my code and portfolio.</li>
-      <li><a href="https://github.com/PAULITCHAN/PAUL-CHRISTIAN-DIMACULANGAN" target="_blank">Academic Repository</a> — Contains my research and technical outputs.</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📧 <a href="mailto:paulchristiandimaculangan@gmail.com" style="color:#58a6ff;">paulchristiandimaculangan@gmail.com</a></p>
-    <p>💻 GitHub: <a href="https://github.com/PAULITCHAN" style="color:#58a6ff;">@PAULITCHAN</a></p>
-  </section>
+  <nav>
+    <a href="#home">🏠 Home</a>
+    <a href="#about">🙋 About</a>
+    <a href="#skills">🧠 Skills</a>
+    <a href="#projects">🚀 Projects</a>
+    <a href="#contact">📧 Contact</a>
+  </nav>
 
   <footer>
-    © 2025 Paul Christian M. Dimaculangan | Built with ❤️ using GitHub Pages
+    ✉️ <a href="mailto:paulchristiandimaculangan@gmail.com">paulchristiandimaculangan@gmail.com</a> |
+    🌐 <a href="https://paulitchan.github.io" target="_blank">Portfolio</a> |
+    🐙 <a href="https://github.com/PAULITCHAN" target="_blank">GitHub</a>
   </footer>
-
 </body>
 </html>
