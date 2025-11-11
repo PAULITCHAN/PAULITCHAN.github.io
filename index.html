@@ -18,31 +18,29 @@
             padding: 50px 20px;
             text-align: center;
         }
-        h1 {
+        header h1 {
             margin: 0;
             font-size: 3em;
         }
-        p.subtitle {
+        header p {
             font-size: 1.2em;
             margin-top: 10px;
         }
         main {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 40px auto;
             padding: 0 20px;
         }
         .projects {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            justify-content: center;
         }
         .card {
             background-color: white;
-            width: 300px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
         .card:hover {
@@ -83,29 +81,37 @@
             background-color: #eee;
             margin-top: 40px;
         }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+            header p {
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Welcome to My Portfolio</h1>
-        <p class="subtitle">Check out my projects below</p>
+        <p>Explore my projects below</p>
     </header>
 
     <main>
         <div class="projects">
-            <!-- Project Card 1 -->
+            <!-- Boracay Website Card -->
             <div class="card">
                 <img src="boracay-website/images/boracay-boats.jpg" alt="Boracay Website">
                 <div class="card-content">
                     <h3>Boracay Website</h3>
-                    <p>A beautiful travel website showcasing Boracay’s resorts, restaurants, and activities.</p>
+                    <p>A travel website showcasing Boracay resorts, restaurants, and activities.</p>
                     <a href="boracay-website/">View Project</a>
                 </div>
             </div>
 
-            <!-- Project Card 2 -->
+            <!-- Gaming Laptop Card -->
             <div class="card">
-                <img src="gaming-laptop/index.html" alt="Gaming Laptop">
+                <img src="gaming-laptop/images/laptop.jpg" alt="Gaming Laptop">
                 <div class="card-content">
                     <h3>Gaming Laptop</h3>
                     <p>A showcase of gaming laptops with specs, images, and reviews.</p>
@@ -113,7 +119,7 @@
                 </div>
             </div>
 
-            <!-- Add more cards here as needed -->
+            <!-- Add more cards here -->
         </div>
     </main>
 
