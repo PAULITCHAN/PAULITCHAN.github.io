@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boracay Activities</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://journeyswithsteve.com/wp-content/uploads/2024/05/FBCDA229-F015-42C2-921C-E4A1E2D826FD_1_105_c.jpeg') no-repeat center center/cover;
+      font-family: 'Open Sans', sans-serif;
+      color: #fff;
+      background-attachment: fixed;
+    }
+
+    h1, h2 {
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+    }
+
+    .activity-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .activity-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .activity-card .card-body {
+      padding: 20px;
+      color: #fff;
+    }
+
+    footer {
+      background-color: #004d40;
+      text-align: center;
+      padding: 15px 0;
+      color: #fff;
+      font-size: 0.9rem;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Boracay Paradise</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="activities.html">Activities</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="text-center py-5 mt-5">
+    <div class="container">
+      <h1 class="fw-bold display-5 mb-3">Explore Exciting Activities in Boracay</h1>
+      <p class="lead">Discover thrilling adventures and serene experiences that make Boracay the ultimate tropical paradise.</p>
+    </div>
+  </section>
+
+  <!-- Activities Grid -->
+  <section class="container py-5">
+    <div class="row g-4">
+
+      <!-- Paraw Sailing -->
+      <div class="col-md-4">
+        <div class="activity-card">
+          <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/07/0a/5f/c3.jpg" alt="Paraw Sailing">
+          <div class="card-body">
+            <h5 class="fw-bold">Paraw Sailing</h5>
+            <p>Experience the famous Boracay sunset while gliding across the crystal waters aboard a traditional paraw sailboat.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Island Hopping -->
+      <div class="col-md-4">
+        <div class="activity-card">
+          <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_2848,h_1839/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/tq8ooxe3wfjrvldrsyrc/BoracayPrivateIslandHopping-KlookPhilippines.jpg" alt="Island Hopping">
+          <div class="card-body">
+            <h5 class="fw-bold">Island Hopping</h5>
+            <p>Visit nearby islands, explore secret beaches, and enjoy snorkeling in turquoise lagoons around Boracay.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vibrant Nightlife -->
+      <div class="col-md-4">
+        <div class="activity-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9Iz7NlxJXf6Ptvtw34KPeLt3Gi6iexT8KPA&s" alt="Vibrant Nightlife">
+          <div class="card-body">
+            <h5 class="fw-bold">Vibrant Nightlife</h5>
+            <p>Dance under the stars or enjoy cocktails by the beach — Boracay comes alive at night with vibrant energy.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Local Cuisine -->
+      <div class="col-md-4">
+        <div class="activity-card">
+          <img src="https://i0.wp.com/blog.bambatravel.com/wp-content/uploads/2024/12/filipino-food.jpg?fit=1920%2C1080&ssl=1" alt="Local Cuisine">
+          <div class="card-body">
+            <h5 class="fw-bold">Local Cuisine</h5>
+            <p>Indulge in authentic Filipino dishes and fresh seafood served with warm island hospitality.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Water Sports -->
+      <div class="col-md-4">
+        <div class="activity-card">
+          <img src="https://dk3o9cokdi9xs.cloudfront.net/boracay-activities/wp-content/uploads/2024/07/29103909/2Z0A1939_webp1400x955-768x512.webp" alt="Water Sports">
+          <div class="card-body">
+            <h5 class="fw-bold">Water Sports</h5>
+            <p>Try jet skiing, parasailing, paddleboarding, and other water adventures for an unforgettable thrill.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cliff Diving -->
+      <div class="col-md-4">
+        <div class="activity-card">
+          <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/07/87/da/f0.jpg" alt="Cliff Diving">
+          <div class="card-body">
+            <h5 class="fw-bold">Cliff Diving</h5>
+            <p>Take the leap at Ariel’s Point — one of Boracay’s most exciting and scenic cliff diving spots.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 <b>Boracay Island</b> | Designed by Paul Christian Dimaculangan
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
