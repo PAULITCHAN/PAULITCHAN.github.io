@@ -32,8 +32,9 @@
       font-family:Arial,sans-serif;
       background:linear-gradient(180deg,var(--bg),#e9efe9 60%);
       color:var(--text);
+      transition: background .3s, color .3s;
     }
-    a{text-decoration:none}
+    a{text-decoration:none;transition:color .3s}
 
     /* NAV */
     .nav{
@@ -73,6 +74,9 @@
       background:var(--primary);
       color:#fff;
       font-weight:700;
+      cursor:pointer;
+      transition:background .3s, color .3s;
+      border:none;
     }
     .btn.secondary{
       background:transparent;
@@ -87,6 +91,7 @@
       border-radius:12px;
       padding:20px;
       box-shadow:var(--shadow);
+      transition:background .3s, color .3s;
     }
     h2{color:var(--primary);margin-bottom:12px}
 
@@ -116,7 +121,7 @@
       border-radius:12px;
       overflow:hidden;
       box-shadow:var(--shadow);
-      transition:transform .25s ease;
+      transition:transform .25s ease, background .3s, color .3s;
     }
     .project-card:hover{transform:translateY(-6px)}
     .project-card img{
@@ -145,6 +150,7 @@
       margin:40px 0;
       text-align:center;
       color:var(--muted);
+      transition:color .3s;
     }
 
     @media(max-width:800px){
@@ -165,6 +171,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button id="darkModeToggle" class="btn secondary">Dark Mode</button>
 </header>
 
 <!-- HERO -->
@@ -245,16 +252,16 @@
     </article>
 
     <article class="project-card">
-  <img src="https://images.topgear.com.ph/topgear/images/2021/04/05/2022-toyota-86-launch-01-1617597525.jpg" alt="">
-  <div class="pc-body">
-    <h3>Toyota Car Gallery</h3>
-    <p>Responsive car gallery with search, filter, and dark mode.</p>
-    <div class="project-actions">
-      <a class="btn" href="https://PAULITCHAN.github.io/gallery-website/" target="_blank">View</a>
-      <a class="btn secondary" href="https://github.com/PAULITCHAN/gallery-website" target="_blank">Code</a>
-    </div>
-  </div>
-</article>
+      <img src="https://images.topgear.com.ph/topgear/images/2021/04/05/2022-toyota-86-launch-01-1617597525.jpg" alt="">
+      <div class="pc-body">
+        <h3>Toyota Car Gallery</h3>
+        <p>Responsive car gallery with search, filter, and dark mode.</p>
+        <div class="project-actions">
+          <a class="btn" href="https://PAULITCHAN.github.io/gallery-website/" target="_blank">View</a>
+          <a class="btn secondary" href="https://github.com/PAULITCHAN/gallery-website" target="_blank">Code</a>
+        </div>
+      </div>
+    </article>
 
   </div>
 </section>
@@ -271,6 +278,30 @@
 <footer>
   © 2025 Paul Christian M. Dimaculangan. All rights reserved.
 </footer>
+
+<!-- Dark Mode Script -->
+<script>
+  const toggle = document.getElementById('darkModeToggle');
+
+  // Apply saved theme on load
+  if(localStorage.getItem('theme') === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    toggle.textContent = 'Light Mode';
+  }
+
+  toggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    if(currentTheme === 'dark') {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+      toggle.textContent = 'Dark Mode';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+      toggle.textContent = 'Light Mode';
+    }
+  });
+</script>
 
 </body>
 </html>
