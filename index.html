@@ -5,322 +5,135 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Paul Christian M. Dimaculangan — Portfolio</title>
   <meta name="description" content="Portfolio of Paul Christian M. Dimaculangan — aspiring web developer. Projects, skills, experience and contact." />
+
   <style>
     :root{
-      --bg: #f5f6f7;
-      --card: #ffffff;
-      --primary: #2e7d32;
-      --accent: #4caf50;
-      --text: #222;
-      --muted: #666;
-      --glass: rgba(255,255,255,0.7);
-      --shadow: 0 6px 18px rgba(0,0,0,0.08);
+      --bg:#f5f6f7;--card:#fff;--primary:#2e7d32;--accent:#4caf50;
+      --text:#222;--muted:#666;--glass:rgba(255,255,255,.7);
+      --shadow:0 6px 18px rgba(0,0,0,.08)
     }
     [data-theme="dark"]{
-      --bg: #0f1113;
-      --card: #121417;
-      --primary: #66bb6a;
-      --accent: #81c784;
-      --text: #e6eef1;
-      --muted: #9aa5a8;
-      --glass: rgba(255,255,255,0.04);
-      --shadow: 0 8px 30px rgba(0,0,0,0.6);
+      --bg:#0f1113;--card:#121417;--primary:#66bb6a;--accent:#81c784;
+      --text:#e6eef1;--muted:#9aa5a8;--glass:rgba(255,255,255,.04);
+      --shadow:0 8px 30px rgba(0,0,0,.6)
     }
-    *{box-sizing:border-box; margin:0; padding:0;}
-    html,body{height:100%; font-family: 'Inter', Arial, sans-serif; scroll-behavior:smooth;}
-    body{background: linear-gradient(180deg, var(--bg), #e9efe9 60%); color: var(--text);}
-    a{text-decoration:none;}
-    
-    /* Navigation */
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:16px 28px; position:sticky; top:0; z-index:60;
-      background: linear-gradient(90deg, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
-      backdrop-filter: blur(6px); box-shadow: var(--shadow);
-    }
-    [data-theme="dark"] .nav{
-      background: linear-gradient(90deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3));
-    }
-    .brand{display:flex; align-items:center; gap:14px; font-weight:700; color:var(--primary);}
-    .brand img{width:50px; height:50px; border-radius:12px; object-fit:cover; box-shadow: 0 6px 18px rgba(0,0,0,0.12);}
-    .nav-links{display:flex; gap:16px; list-style:none;}
-    .nav-links a{padding:8px 12px; border-radius:8px; font-weight:600; color:var(--muted); transition: all 0.2s ease;}
-    .nav-links a:hover{ color:var(--primary); background:var(--glass); transform:translateY(-2px);}
-    .controls{display:flex; gap:10px; align-items:center;}
-    .mobile-toggle{display:none; font-size:1.2rem; background:transparent; border:none;}
-
-    /* Hero */
-    .hero{
-      max-width:1200px; margin:32px auto 0; padding:32px; display:flex; gap:28px; align-items:center;
-      background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
-      border-radius:16px; box-shadow:var(--shadow);
-    }
-    [data-theme="dark"] .hero{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02)); }
-    .hero-left{flex:0 0 140px; display:flex; justify-content:center; align-items:center;}
-    .hero-left img{width:120px; height:120px; border-radius:12px; object-fit:cover; border:4px solid #fff; box-shadow:0 10px 30px rgba(0,0,0,0.12);}
-    .hero-right{flex:1; padding:6px 4px;}
-    .hero-right h1{font-size:2rem; color:var(--primary); margin-bottom:10px;}
-    .hero-right p.lead{font-size:1rem; color:var(--muted); line-height:1.6; max-width:800px;}
-    .hero-actions{margin-top:18px; display:flex; gap:14px;}
-    .btn{padding:10px 16px; border-radius:8px; font-weight:700; background:var(--primary); color:#fff; box-shadow:0 8px 20px rgba(46,125,50,0.12); transition: all 0.2s ease;}
-    .btn.secondary{background:transparent; color:var(--primary); border:1px solid rgba(0,0,0,0.08);}
-    .btn:hover{transform:translateY(-3px); box-shadow:0 14px 32px rgba(46,125,50,0.14);}
-
-    /* Sections */
-    .container{max-width:1200px; margin:32px auto; padding:0 20px;}
-    .card{background:var(--card); border-radius:12px; padding:20px; box-shadow:var(--shadow);}
-    h2{color:var(--primary); margin-bottom:12px;}
-    .about .row{display:grid; grid-template-columns:1fr 320px; gap:24px;}
-    @media (max-width:900px){.about .row{grid-template-columns:1fr;}}
-
-    /* Skills */
-    .skills-grid{display:flex; flex-wrap:wrap; gap:12px; margin-top:12px;}
-    .skill{background:var(--glass); padding:8px 14px; border-radius:8px; font-weight:600; color:var(--muted);}
-    [data-theme="dark"] .skill{background: rgba(255,255,255,0.03); color:var(--text);}
-
-    /* Experience */
-    .experience{display:flex; flex-direction:column; gap:12px; margin-top:12px;}
-    .exp-item{background:var(--card); border-radius:10px; padding:12px 14px; box-shadow:0 6px 18px rgba(0,0,0,0.04);}
-    .exp-item h4{margin:0; color:var(--primary);}
-    .exp-item p{margin-top:4px; color:var(--muted); font-size:0.95rem;}
-
-    /* Projects */
-    .projects-grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:18px; margin-top:20px;}
-    .project-card{overflow:hidden; border-radius:12px; background:var(--card); box-shadow:var(--shadow); transition: transform 0.25s ease;}
-    .project-card:hover{transform:translateY(-6px);}
-    .project-card img{width:100%; height:170px; object-fit:cover;}
-    .project-card .pc-body{padding:14px;}
-    .project-card h3{margin-bottom:6px; color:var(--primary);}
-    .project-meta{font-size:0.9rem; color:var(--muted);}
-
-    /* Contact */
-    .contact{text-align:center; padding:24px; border-radius:12px; background:var(--card); box-shadow:var(--shadow);}
-    .socials{display:flex; justify-content:center; gap:16px; margin-top:12px;}
-    .socials a{color:var(--primary); font-weight:700;}
-    footer{margin-top:36px; text-align:center; padding:22px 10px; color:var(--muted);}
-
-    /* Reveal animation */
-    .reveal{opacity:0; transform:translateY(12px); transition: opacity 0.6s ease, transform 0.6s ease;}
-    .reveal.visible{opacity:1; transform:none;}
-
-    /* Responsive */
-    @media (max-width:800px){
-      .nav-links{display:none;}
-      .mobile-toggle{display:inline-block;}
-      .hero{flex-direction:column; gap:16px; align-items:center; text-align:center;}
-      .hero-right h1{font-size:1.5rem;}
-    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text)}
+    a{text-decoration:none}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:16px 28px;position:sticky;top:0;background:var(--glass)}
+    .brand{font-weight:700;color:var(--primary)}
+    .nav-links{display:flex;gap:16px;list-style:none}
+    .hero{max-width:1200px;margin:32px auto;padding:32px;background:var(--card);border-radius:16px}
+    .hero-actions{margin-top:16px}
+    .btn{padding:10px 16px;border-radius:8px;background:var(--primary);color:#fff;font-weight:700}
+    .btn.secondary{background:none;color:var(--primary);border:1px solid #ccc}
+    .container{max-width:1200px;margin:32px auto;padding:0 20px}
+    .card{background:var(--card);padding:20px;border-radius:12px}
+    .skills-grid{display:flex;flex-wrap:wrap;gap:10px}
+    .skill{background:var(--glass);padding:8px 14px;border-radius:8px}
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+    .project-card{background:var(--card);border-radius:12px;overflow:hidden}
+    .project-card img{width:100%;height:170px;object-fit:cover}
+    footer{text-align:center;margin:40px 0;color:var(--muted)}
   </style>
 </head>
+
 <body>
-  <!-- NAV -->
-  <header class="nav">
-    <div class="brand">
-      <img src="assets/images/Dimaculangan_logo.svg" alt="Paul logo">
-      <div style="display:flex;flex-direction:column;">
-        <span class="name">Paulitchan</span>
-        <small class="small muted">Web Developer</small>
-      </div>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="https://github.com/PAULITCHAN" target="_blank" rel="noopener">GitHub</a></li>
-    </ul>
-    <div class="controls">
-      <button id="themeToggle" class="btn secondary">Dark</button>
-      <button id="menuBtn" class="mobile-toggle">☰</button>
-    </div>
-  </header>
 
-  <!-- HERO -->
-  <section id="home" class="hero container reveal">
-    <div class="hero-left">
-      <img src="assets/images/Dimaculangan_logo.svg" alt="Logo">
-    </div>
-    <div class="hero-right">
-      <h1>Paul Christian M. Dimaculangan</h1>
-      <p class="lead">I build clean, responsive web experiences with HTML, CSS, and JavaScript. I focus on accessible interfaces, performance, and polished user experiences. Currently learning React and building small apps to demonstrate my skills.</p>
-      <div class="hero-actions">
-        <a class="btn" href="#projects">View Projects</a>
-        <a class="btn secondary" href="#contact">Contact</a>
-      </div>
-    </div>
-  </section>
+<!-- NAV -->
+<header class="nav">
+  <div class="brand">
+    <!-- LOGO IMAGE REMOVED -->
+    Paulitchan
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</header>
 
-  <main class="container">
-    <!-- ABOUT -->
-    <section id="about" class="about reveal">
-      <div class="about card">
-        <div class="row">
-          <div>
-            <h2>About Me</h2>
-            <p>I’m <strong>Paul Christian M. Dimaculangan</strong>, an aspiring web developer focused on front-end development and user-centered design. I enjoy translating ideas into responsive, accessible websites and learning modern tools and frameworks to build interactive web apps. I take care with details like layout, spacing, performance and cross-device compatibility.</p>
-            <h3 style="margin-top:16px">What I do</h3>
-            <ul class="small muted" style="margin-top:8px; line-height:1.6">
-              <li>Build responsive websites using semantic HTML, modern CSS, and vanilla JavaScript</li>
-              <li>Optimize UI for accessibility and performance</li>
-              <li>Version control workflows with Git & GitHub</li>
-            </ul>
-          </div>
-          <aside>
-            <h3>Experience</h3>
-            <div class="experience">
-              <div class="exp-item">
-                <h4>Student Developer — School Projects</h4>
-                <p class="muted small">2023 — Present · Developed multiple course projects including web apps and responsive sites.</p>
-              </div>
-              <div class="exp-item">
-                <h4>Intern / Freelance</h4>
-                <p class="muted small">2022 — 2023 · Small freelance tasks: landing pages, content updates, UI fixes.</p>
-              </div>
-            </div>
-            <h3 style="margin-top:12px">Tools I use</h3>
-            <div class="tools">
-              <div class="tool">VS Code</div>
-              <div class="tool">Git & GitHub</div>
-              <div class="tool">Chrome DevTools</div>
-              <div class="tool">Figma (basic)</div>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
+<!-- HERO -->
+<section id="home" class="hero">
+  <!-- PROFILE IMAGE REMOVED -->
+  <h1>Paul Christian M. Dimaculangan</h1>
+  <p>I build clean, responsive web experiences using HTML, CSS, and JavaScript.</p>
+  <div class="hero-actions">
+    <a class="btn" href="#projects">View Projects</a>
+    <a class="btn secondary" href="#contact">Contact</a>
+  </div>
+</section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="reveal" style="margin-top:18px">
+<!-- ABOUT -->
+<section id="about" class="container">
+  <div class="card">
+    <h2>About Me</h2>
+    <p>Aspiring front-end developer focused on responsive and accessible websites.</p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="container">
+  <div class="card">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Git & GitHub</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS (THIS IS WHAT YOU WERE LOOKING FOR) -->
+<section id="projects" class="container">
+  <h2>Projects</h2>
+
+  <div class="projects-grid">
+
+    <article class="project-card">
+      <img src="https://boracaybeachradio.com/wp-content/uploads/2019/10/boracay-beach-sunset.jpg" alt="">
       <div class="card">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-          <div class="skill">HTML5</div>
-          <div class="skill">CSS3</div>
-          <div class="skill">JavaScript (ES6+)</div>
-          <div class="skill">Responsive Design</div>
-          <div class="skill">Git & GitHub</div>
-          <div class="skill">Basic Node.js</div>
-          <div class="skill">React (learning)</div>
-          <div class="skill">Accessibility (a11y)</div>
-        </div>
+        <h3>Boracay Website</h3>
+        <p>Static travel website using HTML & CSS.</p>
+        <a class="btn" href="https://PAULITCHAN.github.io/boracay-website/">View</a>
       </div>
-    </section>
+    </article>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="reveal">
-      <h2 style="text-align:center; margin-top:18px;">Projects</h2>
-      <div class="projects-grid">
-
-        <!-- Boracay Website -->
-        <article class="project-card">
-          <img alt="Boracay" src="https://boracaybeachradio.com/wp-content/uploads/2019/10/boracay-beach-sunset.jpg" />
-          <div class="pc-body">
-            <h3>Boracay Website</h3>
-            <p class="project-meta">A static travel site showcasing resorts, galleries, and contact info. Tech: HTML, CSS.</p>
-            <div style="margin-top:10px">
-              <a class="btn" href="https://PAULITCHAN.github.io/boracay-website/" target="_blank" rel="noopener">View</a>
-              <a class="btn secondary" href="https://github.com/PAULITCHAN/boracay-website" target="_blank" rel="noopener">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Gaming Laptop Showcase -->
-        <article class="project-card">
-          <img alt="Gaming Laptop" src="https://m.media-amazon.com/images/S/aplus-media/vc/9cb6c83e-7348-4bc2-939e-4d243e7d006d.__CR0,0,800,600_PT0_SX800_V1___.jpg" />
-          <div class="pc-body">
-            <h3>Gaming Laptop Showcase</h3>
-            <p class="project-meta">Product-style showcase with specs and images. Tech: HTML, CSS, JS.</p>
-            <div style="margin-top:10px">
-              <a class="btn" href="https://PAULITCHAN.github.io/gaming-laptop/" target="_blank" rel="noopener">View</a>
-              <a class="btn secondary" href="https://github.com/PAULITCHAN/gaming-laptop" target="_blank" rel="noopener">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Toyota Car Gallery -->
-        <article class="project-card">
-          <img alt="Toyota Gallery" src="https://www.cnet.com/a/img/resize/5987beb65c26dbd7c8caf1ca824da5b68345ccc8/hub/2021/04/05/cf825ae4-f2be-4b2d-9a46-293018b1f83a/2022-toyota-86.jpg?auto=webp&fit=crop&height=675&width=1200" />
-          <div class="pc-body">
-            <h3>Toyota Car Gallery</h3>
-            <p class="project-meta">A responsive gallery of Toyota cars with search, filter, pagination, and light/dark mode. Tech: HTML, CSS, JS.</p>
-            <div style="margin-top:10px">
-              <a class="btn" href="https://PAULITCHAN.github.io/gallery-website/" target="_blank" rel="noopener">View</a>
-              <a class="btn secondary" href="https://github.com/PAULITCHAN/gallery-website" target="_blank" rel="noopener">Code</a>
-            </div>
-          </div>
-        </article>
-
+    <article class="project-card">
+      <img src="https://m.media-amazon.com/images/S/aplus-media/vc/9cb6c83e-7348-4bc2-939e-4d243e7d006d.jpg" alt="">
+      <div class="card">
+        <h3>Gaming Laptop Showcase</h3>
+        <p>Product showcase using HTML, CSS & JS.</p>
+        <a class="btn" href="https://PAULITCHAN.github.io/gaming-laptop/">View</a>
       </div>
-    </section>
+    </article>
 
-    <!-- CONTACT -->
-    <section id="contact" class="reveal">
-      <div class="contact">
-        <h2>Contact</h2>
-        <p class="muted">Want to collaborate or ask about a project? Reach out.</p>
-        <p>Email: <a href="mailto:pauldimaculangan@email.com">pauldimaculangan@email.com</a></p>
-        <div class="socials">
-          <a href="https://github.com/PAULITCHAN" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="mailto:pauldimaculangan@email.com">Email</a>
-        </div>
+    <article class="project-card">
+      <img src="https://www.cnet.com/a/img/resize/5987beb65c26dbd7c8caf1ca824da5b68345ccc8/hub/2021/04/05/cf825ae4-f2be-4b2d-9a46-293018b1f83a/2022-toyota-86.jpg" alt="">
+      <div class="card">
+        <h3>Toyota Car Gallery</h3>
+        <p>Gallery with search, filter & dark mode.</p>
+        <a class="btn" href="https://PAULITCHAN.github.io/gallery-website/">View</a>
       </div>
-    </section>
+    </article>
 
-    <footer>
-      &copy; 2025 Paul Christian M. Dimaculangan. All rights reserved.
-    </footer>
-  </main>
+  </div>
+</section>
 
-  <!-- Scripts -->
-  <script>
-    // Theme toggle
-    const btn = document.getElementById('themeToggle');
-    const stored = localStorage.getItem('theme');
-    if(stored==='dark'){ document.documentElement.setAttribute('data-theme','dark'); btn.textContent='Light'; } 
-    else { btn.textContent='Dark'; }
-    btn.addEventListener('click', ()=>{
-      if(document.documentElement.getAttribute('data-theme')==='dark'){
-        document.documentElement.removeAttribute('data-theme'); btn.textContent='Dark'; localStorage.setItem('theme','light');
-      } else {
-        document.documentElement.setAttribute('data-theme','dark'); btn.textContent='Light'; localStorage.setItem('theme','dark');
-      }
-    });
+<!-- CONTACT -->
+<section id="contact" class="container">
+  <div class="card">
+    <h2>Contact</h2>
+    <p>Email: pauldimaculangan@email.com</p>
+  </div>
+</section>
 
-    // Reveal on scroll
-    const reveals = document.querySelectorAll('.reveal');
-    function revealOnScroll(){
-      const windowH = window.innerHeight;
-      reveals.forEach(el=>{
-        const top = el.getBoundingClientRect().top;
-        if(top < windowH - 80) el.classList.add('visible');
-        else el.classList.remove('visible');
-      });
-    }
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('resize', revealOnScroll);
-    revealOnScroll();
+<footer>
+  © 2025 Paul Christian M. Dimaculangan
+</footer>
 
-    // Mobile nav toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.querySelector('.nav-links');
-    menuBtn.addEventListener('click', ()=>{
-      if(getComputedStyle(navLinks).display==='flex'){ navLinks.style.display='none'; }
-      else {
-        navLinks.style.display='flex';
-        navLinks.style.flexDirection='column';
-        navLinks.style.position='absolute';
-        navLinks.style.right='18px';
-        navLinks.style.top='58px';
-        navLinks.style.background='var(--card)';
-        navLinks.style.padding='12px';
-        navLinks.style.borderRadius='8px';
-        navLinks.style.boxShadow='var(--shadow)';
-      }
-    });
-  </script>
 </body>
 </html>
-
-    
