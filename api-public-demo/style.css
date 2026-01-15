@@ -1,0 +1,4 @@
+body{background:#f8f9fa}
+.card-img-top{object-fit:cover;height:220px}
+#resultsInfo{display:block}
+@media (max-width:576px){.card-img-top{height:180px}}
